@@ -1,11 +1,14 @@
 # 🍷 The Lenny Growth Assistant
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-lenny--assistant.vercel.app-9f1239?style=for-the-badge&logo=vercel)](https://lenny-assistant.vercel.app/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-18.0%2B-61DAFB.svg)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.4%2B-646CFF.svg)](https://vitejs.dev/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4%2B-38BDF8.svg)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+🌐 **Live Application Deployment**: [https://lenny-assistant.vercel.app/](https://lenny-assistant.vercel.app/)
 
 **The Lenny Growth Assistant** is a full-stack, AI-powered conversational web application built for Product Managers, Growth Leaders, and Founders. It delivers grounded strategic insights strictly backed by authentic podcast transcripts from world-class tech guests on *Lenny's Podcast*.
 
