@@ -53,33 +53,61 @@ async def send_chat_message(request: ChatRequest, db: Session = Depends(get_db))
     # 3. Retrieve Relevant Transcript Chunks (RAG)
     retrieved_chunks = search_transcripts(db, request.message, top_k=4)
 
-    # Format transcript context
-    context_text = ""
-    sources_citations = []
-    if retrieved_chunks:
-        context_text = "\n\nRELEVANT TRANSCRIPT CONTEXT:\n"
-        for idx, chunk in enumerate(retrieved_chunks, 1):
-            context_text += (
-                f"\n[TRANSCRIPT SOURCE {idx}]:\n"
-                f"Guest: {chunk['guest']} | Episode: {chunk['episode_title']}\n"
-                f"Excerpt: {chunk['excerpt']}\n"
-            )
-            sources_citations.append(SourceCitation(
-                chunk_id=chunk["chunk_id"],
-                episode_title=chunk["episode_title"],
-                guest=chunk["guest"],
-                source_url=chunk["source_url"],
-                excerpt=chunk["excerpt"],
-                relevance_score=chunk["relevance_score"]
-            ))
+    # 4. Strict Grounding Check: If query is completely out-of-scope / no transcript match found
+    if not retrieved_chunks:
+        refusal_content = (
+            f"⚠️ **Knowledge Base Limit**: The query **\"{request.message}\"** is not covered in Lenny's Podcast transcripts.\n\n"
+            f"**The Lenny Growth Assistant** is grounded strictly in authentic transcripts from guests like **Brian Chesky, Marty Cagan, Elena Verna, Gibson Biddle, Shreyas Doshi, and Claire Vo**.\n\n"
+            f"Please ask a product management, growth strategy, or leadership question related to the podcast (e.g., *\"What is Marty Cagan's view on feature factories?\"* or *\"Explain Elena Verna's B2B growth loops\"*)."
+        )
+        assistant_msg = Message(
+            conversation_id=conv.id,
+            role="assistant",
+            content=refusal_content,
+            sources=[]
+        )
+        db.add(assistant_msg)
+        db.commit()
+        db.refresh(assistant_msg)
 
-    # 4. Gather Conversation History for Follow-up Context
+        return ChatResponse(
+            conversation_id=conv.id,
+            message=MessageResponse(
+                id=assistant_msg.id,
+                conversation_id=assistant_msg.conversation_id,
+                role=assistant_msg.role,
+                content=assistant_msg.content,
+                sources=[],
+                artifact_id=None,
+                created_at=assistant_msg.created_at
+            )
+        )
+
+    # Format transcript context
+    context_text = "\n\nRELEVANT TRANSCRIPT CONTEXT:\n"
+    sources_citations = []
+    for idx, chunk in enumerate(retrieved_chunks, 1):
+        context_text += (
+            f"\n[TRANSCRIPT SOURCE {idx}]:\n"
+            f"Guest: {chunk['guest']} | Episode: {chunk['episode_title']}\n"
+            f"Excerpt: {chunk['excerpt']}\n"
+        )
+        sources_citations.append(SourceCitation(
+            chunk_id=chunk["chunk_id"],
+            episode_title=chunk["episode_title"],
+            guest=chunk["guest"],
+            source_url=chunk["source_url"],
+            excerpt=chunk["excerpt"],
+            relevance_score=chunk["relevance_score"]
+        ))
+
+    # 5. Gather Conversation History for Follow-up Context
     history_msgs = db.query(Message).filter(Message.conversation_id == conv.id).order_by(Message.created_at.asc()).all()
     history_payload = []
     for h in history_msgs[:-1]:  # exclude the user message just added
         history_payload.append({"role": h.role, "content": h.content})
 
-    # 5. Build Final Prompt & Invoke LLM
+    # 6. Build Final Prompt & Invoke LLM
     full_user_prompt = f"{request.message}\n{context_text}"
     
     provider_to_use = request.provider or conv.provider

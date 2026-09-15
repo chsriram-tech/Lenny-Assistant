@@ -91,6 +91,11 @@ def search_transcripts(db: Session, query: str, top_k: int = 4) -> List[Dict[str
         if guest_specific_chunks:
             return guest_specific_chunks[:top_k]
 
+    # If no chunks scored higher than 0, return empty list (no match found)
+    if not scored_chunks:
+        logger.info(f"No transcript chunks matched query: '{query}'")
+        return []
+
     # Otherwise return top K unique guest chunks for general queries
     unique_chunks = []
     seen_guests = set()
@@ -98,17 +103,5 @@ def search_transcripts(db: Session, query: str, top_k: int = 4) -> List[Dict[str
         if c["guest"] not in seen_guests or len(unique_chunks) < 2:
             unique_chunks.append(c)
             seen_guests.add(c["guest"])
-
-    if not unique_chunks and chunks:
-        for chunk in chunks[:top_k]:
-            unique_chunks.append({
-                "chunk_id": chunk.id,
-                "episode_title": chunk.episode_title,
-                "guest": chunk.guest,
-                "source_url": chunk.source_url or "https://www.lennysnewsletter.com/podcast",
-                "topic": chunk.topic,
-                "excerpt": chunk.content,
-                "relevance_score": 0.5
-            })
 
     return unique_chunks[:top_k]
