@@ -1,0 +1,118 @@
+[
+  {
+    "episode_title": "Brian Chesky on Refusal to Build a Feature Factory & Design-Led Growth",
+    "guest": "Brian Chesky",
+    "topic": "Product Management & Founder-Led Product",
+    "source_url": "https://www.lennysnewsletter.com/p/brian-chesky-airbnb",
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "content": "At Airbnb, we completely transformed the product organization by eliminating traditional classic project management and merging product management with product marketing. PMs shouldn't just be ticket pushers or feature factory managers who write PRDs for engineers and sit back. PMs must be deeply involved in the design, customer experience, positioning, and narrative from day one. When you have a product team separated from design and storytelling, you get bloated, disjointed products that feel built by committee."
+      },
+      {
+        "chunk_index": 2,
+        "content": "If you want to build a truly iconic product, you have to operate with founder-level intensity. That means reviewing the roadmap every single week, looking at the actual screens and design details, and refusing to ship mediocre software just because it met a deadline. Product quality is not an outcome of a process; it is a relentless standard driven by leaders who care about every pixel, interaction, and copy detail."
+      }
+    ]
+  },
+  {
+    "episode_title": "Marty Cagan on Empowered Teams vs Feature Factories",
+    "guest": "Marty Cagan",
+    "topic": "Product Strategy & Team Structure",
+    "source_url": "https://www.lennysnewsletter.com/p/marty-cagan-empowered-teams",
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "content": "The biggest disease in product management today is the feature factory. In feature factories, executive teams pass down roadmaps filled with feature requests, and PMs act as backlog administrators prioritizing tickets for engineers. In contrast, empowered product teams are given outcome-based business problems to solve—such as 'increase activation rate by 15%' or 'reduce 30-day churn'. They are given the strategic context, autonomy, and cross-functional mandate to discover the best solution."
+      },
+      {
+        "chunk_index": 2,
+        "content": "True product discovery requires validating four core risks before building a single line of code: value risk (will customers buy or choose to use it?), usability risk (can users figure out how to use it?), feasibility risk (can our engineers build it within time and technology constraints?), and business viability risk (does this solution work for our sales, legal, finance, and compliance constraints?). If you skip discovery, engineering becomes a cost center building features nobody wants."
+      }
+    ]
+  },
+  {
+    "episode_title": "Elena Verna on B2B Growth Loops & Product-Led Growth (PLG)",
+    "guest": "Elena Verna",
+    "topic": "Product-Led Growth & Retention",
+    "source_url": "https://www.lennysnewsletter.com/p/elena-verna-growth-loops",
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "content": "Product-Led Growth (PLG) is not just a marketing tactic or adding a free tier; it is an organizational architecture where the product itself drives customer acquisition, retention, and expansion. Traditional linear funnels (MQL -> SQL -> Close) are obsolete for modern SaaS. You must build growth loops: viral loops (where users invite teammates), content loops (where user actions generate public SEO landing pages), or data loops."
+      },
+      {
+        "chunk_index": 2,
+        "content": "Retention is the bedrock of all growth. You cannot fix a leaky bucket with top-of-funnel acquisition. To build sustainable retention, focus on time-to-value (TTV) and user activation. Identify your product's 'Aha! moment'—the exact action taken early in the user lifecycle that correlates highest with 90-day retention—and systematically remove every friction point between sign-up and that activation event."
+      }
+    ]
+  },
+  {
+    "episode_title": "Gibson Biddle on Netflix Retention & the DHM Model",
+    "guest": "Gibson Biddle",
+    "topic": "Retention Strategy & Branding",
+    "source_url": "https://www.lennysnewsletter.com/p/gibson-biddle-netflix-retention",
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "content": "When I led product at Netflix, our product strategy was guided by the DHM framework: How will our product Delight customers, in Hard-to-copy ways, that enhance Margin? Delight comes from solving customer pain points seamlessly. Hard-to-copy advantages include network effects, unique technology, brand trust, and economies of scale. Margin-enhancing means pricing, tiering, and monetization models that ensure business profitability."
+      },
+      {
+        "chunk_index": 2,
+        "content": "To measure retention effectively, avoid vanity metrics like monthly active users (MAU) without context. Track cohort retention curves. A healthy product has a cohort curve that flattens out parallel to the x-axis, showing a baseline of permanently retained users. If your cohort curve steadily trends down to zero, you do not have product-market fit, regardless of how fast top-of-funnel signups are growing."
+      }
+    ]
+  },
+  {
+    "episode_title": "Shreyas Doshi on the LNO Framework & Product Sense",
+    "guest": "Shreyas Doshi",
+    "topic": "Product Leadership & Productivity",
+    "source_url": "https://www.lennysnewsletter.com/p/shreyas-doshi-lno-framework",
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "content": "High-performing product managers often burn out because they treat all tasks equally. I teach the LNO Framework: categorize your work into Leverage, Neutral, and Overhead tasks. Leverage tasks (L) have a 10x impact on product trajectory—like crafting core strategy, designing key user journeys, or defining success metrics. Execute these with perfection. Neutral tasks (N) have 1x impact; do them satisfactorily. Overhead tasks (O) are administrative; complete them quickly with minimum effort."
+      },
+      {
+        "chunk_index": 2,
+        "content": "Product sense is not magic intuition; it is empathy for customer problems combined with a deep understanding of technology and business mechanics. You develop product sense by analyzing hundreds of products, conducting deep user interviews, dissecting why users drop off, and observing how top-tier products orchestrate user onboarding and activation."
+      }
+    ]
+  },
+  {
+    "episode_title": "Casey Winters on Growth Loops vs Traditional Funnels",
+    "guest": "Casey Winters",
+    "topic": "Acquisition & Virality",
+    "source_url": "https://www.lennysnewsletter.com/p/casey-winters-growth-loops",
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "content": "Most companies fail at scaling acquisition because they rely on unsustainable performance marketing. Real growth scales through loops: User Signup -> Core Product Action -> Outputs (Content, Invites, Recommendations) -> New User Exposure -> User Signup. SEO loops and Viral invite loops create compound acquisition cycles where input effort yields compounding output."
+      }
+    ]
+  },
+  {
+    "episode_title": "Rahul Vohra on The Superhuman Product-Market Fit Engine",
+    "guest": "Rahul Vohra",
+    "topic": "Product-Market Fit & Metrics",
+    "source_url": "https://www.lennysnewsletter.com/p/rahul-vohra-pmf-engine",
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "content": "At Superhuman, we turned Product-Market Fit from a vague feeling into a quantitative engine. Ask your active users: 'How would you feel if you could no longer use the product?' Options: Very Disappointed, Somewhat Disappointed, Not Disappointed. If 40% or more answer 'Very Disappointed', you have achieved Product-Market Fit. Segment these users to find your High Expectation Customer (HXC), double down on what they love, and systematically fix what is holding back the 'Somewhat Disappointed' cohort."
+      }
+    ]
+  },
+  {
+    "episode_title": "Claire Vo on AI-First Product Development & Execution Speed",
+    "guest": "Claire Vo",
+    "topic": "AI Products & Prototyping",
+    "source_url": "https://www.lennysnewsletter.com/p/claire-vo-ai-products",
+    "chunks": [
+      {
+        "chunk_index": 1,
+        "content": "In the AI era, speed of execution and prototyping is the ultimate competitive advantage. Writing lengthy 30-page spec documents before building anything is obsolete. Product managers should leverage LLMs and low-code/no-code AI tools to build functional interactive prototypes within hours. Test interactive prototypes with real users, gather instant behavioral feedback, and iterate rapidly."
+      }
+    ]
+  }
+]
